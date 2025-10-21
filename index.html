@@ -1,75 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jenn</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎂 Happy Birthday Jenn 🎂</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
-
     body {
       margin: 0;
       height: 100vh;
+      background: linear-gradient(135deg, #ffb6f9, #d291ff);
       display: flex;
-      justify-content: center;
       align-items: center;
-      background: radial-gradient(circle at top, #111 0%, #000 100%);
-      font-family: 'Montserrat', sans-serif;
-      color: white;
+      justify-content: center;
       overflow: hidden;
-    }
-
-    .container {
+      flex-direction: column;
+      font-family: 'Poppins', sans-serif;
+      color: white;
       text-align: center;
-      animation: fadeIn 1.5s ease-out;
     }
 
     h1 {
-      font-size: 3em;
-      letter-spacing: 2px;
-      background: linear-gradient(90deg, #ff4d4d, #ffb84d);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: glow 2s ease-in-out infinite alternate;
+      font-size: 3rem;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
     }
 
-    p {
-      font-size: 1.2em;
-      color: #ccc;
-      margin-top: 10px;
-      animation: fadeInUp 2s ease;
+    .msg {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards 3s;
     }
 
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #ff4d4d; }
-      to { text-shadow: 0 0 25px #ffb84d; }
+    .from {
+      font-size: 0.9rem;
+      margin-top: 2rem;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards 6s;
+      color: #ffe1ff;
+    }
+
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      width: 50px;
+      height: 70px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #fff 5%, #ff6ff7 60%, #c94bff 100%);
+      animation: float 6s ease-in-out infinite;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(20px); }
     }
 
-    .tagline {
-      margin-top: 30px;
-      font-size: 0.9em;
-      color: #666;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      animation: fadeIn 2.5s ease;
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-300px) rotate(5deg); }
+      100% { transform: translateY(0) rotate(0deg); }
+    }
+
+    .confetti {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: white;
+      opacity: 0.8;
+      animation: fall 4s infinite ease-in;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0); }
+      100% { transform: translateY(700px) rotate(360deg); opacity: 0; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Jenn</h1>
-    <p>Something beautiful is loading...</p>
-    <div class="tagline">made by someone who can’t forget you.</div>
-  </div>
+  <audio id="yaySound" src="https://www.myinstants.com/media/sounds/roblox-yay.mp3" preload="auto"></audio>
+  <h1 id="title">🎉 Happy Birthday Jenn 🎉</h1>
+  <div class="msg" id="msg">i hope your day shines as bright as your smiles jennn🤗</div>
+  <div class="from">– from someone that can’t forget u 💫</div>
+
+  <script>
+    const yay = document.getElementById("yaySound");
+    setTimeout(() => yay.play(), 2500);
+
+    // spawn balloons
+    for (let i = 0; i < 8; i++) {
+      const b = document.createElement("div");
+      b.classList.add("balloon");
+      b.style.left = Math.random() * 100 + "vw";
+      b.style.animationDelay = Math.random() * 4 + "s";
+      document.body.appendChild(b);
+    }
+
+    // spawn confetti
+    for (let i = 0; i < 50; i++) {
+      const c = document.createElement("div");
+      c.classList.add("confetti");
+      c.style.left = Math.random() * 100 + "vw";
+      c.style.background = `hsl(${Math.random() * 360}, 80%, 70%)`;
+      c.style.animationDelay = Math.random() * 4 + "s";
+      document.body.appendChild(c);
+    }
+  </script>
 </body>
 </html>
