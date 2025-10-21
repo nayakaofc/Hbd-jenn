@@ -3,46 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Jenn 🎂</title>
+  <title>Jenn</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
     body {
-      background: linear-gradient(135deg, #ffdee9, #b5fffc);
+      margin: 0;
       height: 100vh;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
-      font-family: 'Poppins', sans-serif;
-      color: #333;
-      text-align: center;
+      align-items: center;
+      background: radial-gradient(circle at top, #111 0%, #000 100%);
+      font-family: 'Montserrat', sans-serif;
+      color: white;
       overflow: hidden;
     }
+
+    .container {
+      text-align: center;
+      animation: fadeIn 1.5s ease-out;
+    }
+
     h1 {
-      font-size: 2.5em;
-      animation: fadeIn 2s ease-in-out forwards;
+      font-size: 3em;
+      letter-spacing: 2px;
+      background: linear-gradient(90deg, #ff4d4d, #ffb84d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 2s ease-in-out infinite alternate;
     }
+
     p {
-      opacity: 0;
-      animation: fadeIn 3s ease-in-out forwards;
-      animation-delay: 2s;
+      font-size: 1.2em;
+      color: #ccc;
+      margin-top: 10px;
+      animation: fadeInUp 2s ease;
     }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff4d4d; }
+      to { text-shadow: 0 0 25px #ffb84d; }
+    }
+
     @keyframes fadeIn {
-      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    .heart {
-      color: red;
-      animation: pulse 1s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.2); }
+
+    .tagline {
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #666;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      animation: fadeIn 2.5s ease;
     }
   </style>
 </head>
 <body>
-  <h1>🎉 Happy Birthday, Jenn! 🎉</h1>
-  <p>You’re amazing, kind, and one of a kind <span class="heart">❤️</span></p>
-  <p>From ur favorite person — coded with love 💻✨</p>
+  <div class="container">
+    <h1>Jenn</h1>
+    <p>Something beautiful is loading...</p>
+    <div class="tagline">made by someone who can’t forget you.</div>
+  </div>
 </body>
 </html>
