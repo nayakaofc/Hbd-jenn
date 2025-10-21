@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Jenn 🎂</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #ffdee9, #b5fffc);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      text-align: center;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 2.5em;
+      animation: fadeIn 2s ease-in-out forwards;
+    }
+    p {
+      opacity: 0;
+      animation: fadeIn 3s ease-in-out forwards;
+      animation-delay: 2s;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(20px); }
+    }
+    .heart {
+      color: red;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Happy Birthday, Jenn! 🎉</h1>
+  <p>You’re amazing, kind, and one of a kind <span class="heart">❤️</span></p>
+  <p>From ur favorite person — coded with love 💻✨</p>
+</body>
+</html>
